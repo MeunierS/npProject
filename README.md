@@ -1,7 +1,7 @@
 # npProject
 
 ![](https://img.shields.io/badge/Company-Becode-blue)
-![](https://img.shields.io/badge/Init.Phase-WIP-yellow)
+![](https://img.shields.io/badge/Mock.up-Done-green)
 
 
 ## About / Synopsis
@@ -9,7 +9,7 @@
 * This is a consolidation challenge for Becode to prove your knowledge of OOP with Node.JS or PHP
 * source : [Here](https://github.com/becodeorg/BXL-Swartz-3-21/tree/master/09-OOP-npProject)
 * Theme : News site
-* Project status: Launching Coding soon
+* Project status: sketch done, beginning front-end
 
 ## Table of contents
 
@@ -17,7 +17,8 @@
 >   * [About / Synopsis](#about--synopsis)
 >   * [Table of contents](#table-of-contents)
 >   * [Installation](#installation)
->   * [Usage](#usage)
+>   * [Usage](#usage)  
+>     * [Mock-up](#mock-up)  
 >     * [Screenshots](#screenshots)
 >     * [Features](#features)
 >   * [Code](#code)
@@ -40,10 +41,13 @@ Then run ```nodemon app``` or ```node app``` if you don't use nodemon
 ## Usage
 
 N/A
+### Mock-up
+
+![Mock-up1](./readmeressources/maquette1.png)
+![Mock-up2](./readmeressources/maquette2.png)
 
 ### Screenshots
 
-To do
 
 ### Features
 
@@ -88,8 +92,8 @@ None for now
 
 ## License
 
-To do
-
++ Becode
++ Open Font License
 
 ## About Becode
 
