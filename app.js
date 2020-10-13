@@ -55,9 +55,9 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-app.get('/signin', (req, res) => {
+app.get('/signup', (req, res) => {
 
-    res.render('signin');
+    res.render('signup');
 });
 
 app.get('/login', (req, res) => {

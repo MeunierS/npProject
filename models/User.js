@@ -16,8 +16,13 @@ const userSchema = new mongoose.Schema({
     pwd: {
         type: String,
         required: [true, 'Please enter a password'],
-        minlength: [8, 'Minimum length required is 8 characters']
-    }
+        minlength: [6, 'Minimum length required is 6 characters']
+    }//,
+    // pseudo: {
+    //     type: String,
+    //     required: [true, 'Please enter a pseudo'],
+    //     unique: true
+    // }
 
 });
 

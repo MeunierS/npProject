@@ -8,7 +8,8 @@ const handleErrors = (err) => {
     console.log(err.message, err.code);
     let errors = {
         email: '',
-        pwd: ''
+        pwd: ''//,
+       // pseudo: ''
     };
 
     //incorrect email
@@ -21,9 +22,10 @@ const handleErrors = (err) => {
         errors.pwd = 'wrong password';
     }
 
-    //duplicate email
+    //duplicate email or pseudo
     if (err.code === 11000) {
         errors.email = 'That email is already in use';
+       // errors.pseudo = 'That pseudo is already in use';
         return errors;
     }
 
@@ -68,12 +70,14 @@ module.exports.logout_get = (req, res) => {
 module.exports.signup_post = async (req, res) => {
     const {
         email,
-        pwd
+        pwd,
+      //  pseudo
     } = req.body;
     try {
         const user = await User.create({
             email,
-            pwd
+            pwd//,
+         //   pseudo
         });
         const token = createToken(user._id);
         res.cookie('jwt', token, {

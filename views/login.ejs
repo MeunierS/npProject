@@ -10,7 +10,7 @@
     <%- include('./partials/nav.ejs');  %>
 
     <!--log in-->
-    <form>
+    <form action="/login">
         <h2>Log in</h2>
         <label for="email">Email</label>
         <input type="email" name="email" required>
@@ -49,7 +49,7 @@
                 })
                 const data = await res.json();
                 //error put in div
-                if (data.error) {
+                if (data.errors) {
                     emailError.textContent = data.errors.email;
                     pwdError.textContent = data.errors.pwd;
                 }
