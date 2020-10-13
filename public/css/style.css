@@ -1,0 +1,11 @@
+* {
+    font-family: 'Libre Baskerville', serif;
+}
+
+body {
+    background-color: #2E2E2E;
+    color: white;
+    display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}

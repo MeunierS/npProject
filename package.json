@@ -4,7 +4,8 @@
   "description": "news site",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app"
+    "test": "nodemon app",
+    "build": "postcss css/style.css -o build/style.css"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/MeunierS/npProject#readme",
   "dependencies": {
+    "autoprefixer": "^10.0.1",
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "ejs": "^3.1.5",
@@ -35,4 +37,5 @@
     "morgan": "^1.10.0",
     "validator": "^13.1.17"
   }
+
 }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- head include-->
+<%- include('./partials/head.ejs');  %>
+
+<body>
+
+    <!-- nav include-->
+    <%- include('./partials/nav.ejs');  %>
+
+    <!--sign up-->
+    <form>
+        <h2>Sign Up</h2>
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+        <div class="email error"></div>
+        <label for="pwd">Password</label>
+        <input type="password" name="pwd" required>
+        <div class="pwd error"></div>
+        <button>Sign up</button>
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const emailError = document.querySelector('.email.error');
+        const pwdError = document.querySelector('.pwd.error');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            //reset error
+            emailError.textContent = '';
+            pwdError.textContent = '';
+
+            // GET values
+            const email = form.email.value;
+            const pwd = form.pwd.value;
+
+            try {
+                const res = await fetch('/signup', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        email,
+                        pwd
+                    }),
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                const data = await res.json();
+                //error put in div
+                if (data.error) {
+                    emailError.textContent = data.errors.email;
+                    pwdError.textContent = data.errors.pwd;
+                }
+                //redirect
+                if (data.user) {
+                    location.assign('/');
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        })
+    </script>
+    <!-- footer include-->
+    <%- include('./partials/footer.ejs');  %>
+</body>
+
+</html>
