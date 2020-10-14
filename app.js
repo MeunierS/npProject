@@ -1,7 +1,7 @@
 //! important delete before push :
-//! app.js line 29
-//! authController.js line 47
-//! authMiddleware.js line 31
+//! app.js
+//! authController.js
+//! authMiddleware.js
 
 //require
 const express = require('express');
@@ -18,23 +18,22 @@ const {
 //MongoDB
 const MongoClient = require('mongodb').MongoClient;
 
-
-
 //express app
 const app = express();
+
+//register view engines
+app.set('view engine', 'ejs');
 
 //Connect to MongoDB
 //! delete line with db before push
 const dbURI = "mongodb+srv://tester:patate@clusterfreshshop.smrlx.mongodb.net/dbtest?retryWrites=true&w=majority";
 mongoose.connect(dbURI, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     })
     .then((result) => app.listen(3000))
     .catch((err) => console.log(err))
-
-//register view engines
-app.set('view engine', 'ejs');
 
 //middleware & static files
 app.use(express.static('public'));

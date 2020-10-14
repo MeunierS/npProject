@@ -17,12 +17,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please enter a password'],
         minlength: [6, 'Minimum length required is 6 characters']
-    }//,
-    // pseudo: {
-    //     type: String,
-    //     required: [true, 'Please enter a pseudo'],
-    //     unique: true
-    // }
+    },
+    pseudo: {
+        type: String,
+        required: [true, 'Please enter a pseudo'],
+        unique: true
+    }
 
 });
 

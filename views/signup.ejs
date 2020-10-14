@@ -12,9 +12,9 @@
     <!--sign up-->
     <form action="/signup">
         <h2>Sign Up</h2>
-        <!-- <label for="pseudo">Pseudo</label>
+        <label for="pseudo">Pseudo</label>
         <input type="text" name="pseudo" required>
-        <div class="pseudo error"></div> -->
+        <div class="pseudo error"></div>
         <label for="email">Email</label>
         <input type="email" name="email" required>
         <div class="email error"></div>
@@ -27,7 +27,7 @@
         const form = document.querySelector('form');
         const emailError = document.querySelector('.email.error');
         const pwdError = document.querySelector('.pwd.error');
-       // const pseudoError = document.querySelector('.pseudo.error');
+        const pseudoError = document.querySelector('.pseudo.error');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -35,20 +35,20 @@
             //reset error
             emailError.textContent = '';
             pwdError.textContent = '';
-           // pseudoError.textContent = '';
+            pseudoError.textContent = '';
 
             // GET values
             const email = form.email.value;
             const pwd = form.pwd.value;
-            //const pseudo = form.pseudo.value;
+            const pseudo = form.pseudo.value;
 
             try {
                 const res = await fetch('/signup', {
                     method: 'POST',
                     body: JSON.stringify({
                         email,
-                        pwd//,
-                       // pseudo
+                        pwd,
+                        pseudo
                     }),
                     headers: {
                         'Content-type': 'application/json'
@@ -59,7 +59,7 @@
                 if (data.errors) {
                     emailError.textContent = data.errors.email;
                     pwdError.textContent = data.errors.pwd;
-                    //pseudoError.textContent = data.errors.pseudo;
+                    pseudoError.textContent = data.errors.pseudo;
                 }
                 //redirect
                 if (data.user) {

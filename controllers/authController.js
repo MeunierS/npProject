@@ -8,8 +8,8 @@ const handleErrors = (err) => {
     console.log(err.message, err.code);
     let errors = {
         email: '',
-        pwd: ''//,
-       // pseudo: ''
+        pwd: '',
+        pseudo: ''
     };
 
     //incorrect email
@@ -25,7 +25,7 @@ const handleErrors = (err) => {
     //duplicate email or pseudo
     if (err.code === 11000) {
         errors.email = 'That email is already in use';
-       // errors.pseudo = 'That pseudo is already in use';
+        errors.pseudo = 'That pseudo is already in use';
         return errors;
     }
 
@@ -58,7 +58,7 @@ module.exports.login_get = (req, res) => {
     res.render('login');
 }
 module.exports.logout_get = (req, res) => {
-    res.cokkie('jwt', '', {
+    res.cookie('jwt', '', {
         maxAge: 1
     });
     res.redirect('/');
@@ -71,13 +71,13 @@ module.exports.signup_post = async (req, res) => {
     const {
         email,
         pwd,
-      //  pseudo
+        pseudo
     } = req.body;
     try {
         const user = await User.create({
             email,
-            pwd//,
-         //   pseudo
+            pwd,
+            pseudo
         });
         const token = createToken(user._id);
         res.cookie('jwt', token, {
