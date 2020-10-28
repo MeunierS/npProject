@@ -1,28 +1,40 @@
 <header>
-    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <a href="/"><img src="../../public/images/newslogo.png" alt="Logo News"></a>
-            <span class="font-semibold text-xl tracking-tight">GamyNews</span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="">
+            <a href="/"><img src="/images/newslogo.png" alt="Logo News"></a>
+            <span class="">GamyNews</span>
         </div>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="text-sm lg:flex-grow">
-                <a href="/index" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                    Home
-                </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">Home</a>
+                  </li>
                 <% if (user) { %>
-                <a href="/my-account"
-                    class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">Welcome,
-                    <%= user.pseudo %></a>
-                <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">Log
-                    Out</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my-account">Welcome,
+                            <%= user.pseudo %></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log
+                            Out</a>
+                      </li>
                 <% } else {%>
-                <a href="/signup"
-                    class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">Register Here</a>
-                <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">Log
-                    In</a>
-                <% }%>
-            </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Register Here</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/login">Log
+                            In</a>
+                      </li>
+                <% } %>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
         </div>
-
     </nav>
 </header>
