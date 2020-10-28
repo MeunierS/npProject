@@ -2,7 +2,12 @@
 
 ![](https://img.shields.io/badge/Company-Becode-blue)
 ![](https://img.shields.io/badge/Mock.up-Done-green)
-![](https://img.shields.io/badge/Auth-WIP-yellow)
+![](https://img.shields.io/badge/Auth-Done-green)
+![](https://img.shields.io/badge/Newsletter-Done-green)
+![](https://img.shields.io/badge/Frontend-WIP-yellow)
+![](https://img.shields.io/badge/API-TODO-red)
+
+
 
 
 ## About / Synopsis
@@ -10,7 +15,7 @@
 * This is a consolidation challenge for Becode to prove your knowledge of OOP with Node.JS or PHP
 * Source : [Here](https://github.com/becodeorg/BXL-Swartz-3-21/tree/master/09-OOP-npProject)
 * Theme : News site oriented to videogames
-* Project status: sketch done, beginning front-end
+* Project status: sketch done, back-end progressing, beginning front-end
 
 ## Table of contents
 
@@ -58,6 +63,7 @@ N/A
 + Authentification system (register, log in, log out, jwt cookie)
 + Protected routes
 + Conditionnal rendering
++ Newsletter subscribe
 
 ## Code
 
@@ -94,6 +100,7 @@ None for now
 
 + Becode
 + Open Font License
++ Bootstrap
 
 ## About Becode
 

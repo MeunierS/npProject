@@ -1,0 +1,41 @@
+    <!--subscribe to newsletter-->
+    <form action="/newsletter">
+        <h2>Newsletter</h2>
+        <label for="newsmail">Email</label>
+        <input type="email" name="newsmail" required>
+        <div class="newsmail error"></div>
+        <button>Subscribe</button>
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const newsmailError = document.querySelector('.newsmail.error');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            //reset error
+            newsmailError.textContent = '';
+
+            // GET values
+            const newsmail = form.newsmail.value;
+
+            try {
+                const res = await fetch('/newsletter', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        newsmail
+                    }),
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                const data = await res.json();
+                //error put in div
+                if (data.errors) {
+                    newsmailError.textContent = data.errors.newsmail;
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        })
+    </script>

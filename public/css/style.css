@@ -9,3 +9,6 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+input  {
+  color: black;
+}

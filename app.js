@@ -9,6 +9,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const indexRoutes = require('./routes/indexRoutes');
 const authRoutes = require('./routes/authRoutes');
+const newsletterRoutes = require('./routes/newsletterRoutes');
 const cookieParser = require('cookie-parser');
 const {
     requireAuth,
@@ -48,6 +49,7 @@ app.use(cookieParser());
 app.get('*', checkUser);
 app.use(indexRoutes);
 app.use(authRoutes);
+app.use(newsletterRoutes);
 
 app.get('/about', (req, res) => {
 
